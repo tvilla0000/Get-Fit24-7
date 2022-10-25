@@ -59,7 +59,6 @@ def main():
     count = 0
     while task != 'quit':
         count += 1
-        print(count)
         if count == 1:
             task = str(input("What Are You Working On Today? If You've Changed Your Mind enter 'quit' to cancel out! \n")).lower()
         elif count > 1:
