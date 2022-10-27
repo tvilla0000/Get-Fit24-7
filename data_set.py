@@ -34,6 +34,9 @@ def getDls():
     for s in sheets:
         data = pd.read_excel(filepath_DLs, sheet_name=s)
         df = pd.DataFrame(data, columns=["STATUS", "NAME", "AMOUNT", "PHONE NUMBER"])
+        object_data = df.to_dict('records')
+        for i in object_data:
+            print(list(i.keys()))
         print(f' \n {s} \n \n {df}\n')
  
 
