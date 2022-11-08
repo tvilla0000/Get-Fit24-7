@@ -34,9 +34,7 @@ def getDls():
     for s in sheets:
         data = pd.read_excel(filepath_DLs, sheet_name=s)
         df = pd.DataFrame(data, columns=["STATUS", "NAME", "AMOUNT", "PHONE NUMBER"])
-        object_data = df.to_dict('records')
-        for i in object_data:
-            print(list(i.keys()))
+        df_dict = df.to_dict('records')
         print(f' \n {s} \n \n {df}\n')
  
 
@@ -53,6 +51,9 @@ def getCollections():
         df = pd.DataFrame(data, columns=["STATUS", "NAME", "AMOUNT", "PHONE NUMBER"])
         df = df[df['STATUS'] == 'COLLECTIONS']
         print(f' \n {s} \n \n {df} \n')
+        df_dict = df.to_dict('records')
+        print(df_dict)
+
 
 
 
@@ -77,6 +78,9 @@ def main():
                 if task == 'quit':
                     print("Have a Nice day!")
                     return
+                elif task == "convert to dictionary":
+                    print(f"Following sheet(s) {sheets} have been converted to python objects.")
+                    
                 elif task in tasks and task != 'get dls':
                     if task == 'get collections':
                         print(f"Here Are Your Results For Collections in sheet(s) {sheets} \n")
