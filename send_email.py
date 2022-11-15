@@ -28,5 +28,3 @@ def send_email(subject, body, to):
 if __name__ == '__main__':
     send_email("Hi" + " " + test_name + "!", "This is a test message! This message was sent using Python!", "alvesjoao98@yahoo.com")
 
-
-main()
